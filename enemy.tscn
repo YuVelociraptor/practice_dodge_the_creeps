@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bcexeb70budhu"]
 
 [node name="enemy" type="RigidBody2D"]
+gravity_scale = 1.66533e-16
 metadata/_edit_group_ = true
 
 [node name="EnemyAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
