@@ -28,3 +28,10 @@ func _process(delta):
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
+	if velocity.x != 0:
+		$PlayerAnime.animation = "walk"
+		$PlayerAnime.flip_v = false
+		$PlayerAnime.flip_h = velocity.x < 0
+	elif velocity.y != 0:
+		$PlayerAnime.animation = "up"
+		$PlayerAnime.flip_v = velocity.y > 0
