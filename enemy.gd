@@ -3,8 +3,8 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var enemy_types = $EnemyAnimatedSprite2D.sprite_frames.get_animation_names
-	$EnemyAnimatedSprite2D.play(enemy_types[randi() % enemy_types.size()])
+	var enemy_types = Array($EnemyAnimatedSprite2D.sprite_frames.get_animation_names())
+	$EnemyAnimatedSprite2D.animation = enemy_types.pick_random()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
