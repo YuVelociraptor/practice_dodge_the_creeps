@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqxh26su26jp4"]
+[gd_scene load_steps=4 format=3 uid="uid://bqxh26su26jp4"]
 
 [ext_resource type="PackedScene" uid="uid://b84sxvtrhp5ba" path="res://player.tscn" id="1_l0vy7"]
+[ext_resource type="Script" path="res://main.gd" id="1_mbisb"]
+
+[sub_resource type="Curve2D" id="Curve2D_oherm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 608, 8, 0, 0, 0, 0, 624, 808, 0, 0, 0, 0, 8, 808, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0)
+}
+point_count = 6
 
 [node name="Main" type="Node"]
+script = ExtResource("1_mbisb")
 
 [node name="Player" parent="." instance=ExtResource("1_l0vy7")]
 
@@ -17,3 +25,9 @@ one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(240, 480)
+
+[node name="EnemyPath2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_oherm")
+
+[node name="EnemySpawnLocation" type="PathFollow2D" parent="EnemyPath2D"]
+rotation = 0.0131571
