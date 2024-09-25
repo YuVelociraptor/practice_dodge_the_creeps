@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://bqxh26su26jp4"]
+[gd_scene load_steps=2 format=3 uid="uid://bqxh26su26jp4"]
+
+[ext_resource type="PackedScene" uid="uid://b84sxvtrhp5ba" path="res://player.tscn" id="1_l0vy7"]
 
 [node name="Main" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_l0vy7")]
+
+[node name="EnemyTimer" type="Timer" parent="."]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
