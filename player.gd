@@ -24,5 +24,7 @@ func _process(delta):
 		$PlayerAnime.play()
 	else:
 		$PlayerAnime.stop()
-		
+	
+	position += velocity * delta
+	position = position.clamp(Vector2.ZERO, screen_size)
 	
