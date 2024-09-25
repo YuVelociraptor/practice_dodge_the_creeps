@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxe03s4f4mfle"]
+[gd_scene load_steps=3 format=3 uid="uid://bxe03s4f4mfle"]
 
 [ext_resource type="FontFile" uid="uid://e5op3t2lforf" path="res://fonts/Xolonium-Regular.ttf" id="1_6rr86"]
+[ext_resource type="Script" path="res://hud.gd" id="1_pubhl"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_pubhl")
 
 [node name="Message" type="Label" parent="."]
 anchors_preset = 8
@@ -55,3 +57,6 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_6rr86")
 theme_override_font_sizes/font_size = 67
 text = "Start"
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
