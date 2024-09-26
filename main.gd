@@ -57,4 +57,3 @@ func _on_enemy_timer_timeout():
 	enemy.linear_velocity = velocity.rotated(direction)
 
 	add_child(enemy)
-
